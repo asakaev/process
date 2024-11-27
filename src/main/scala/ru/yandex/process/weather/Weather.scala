@@ -9,7 +9,7 @@ trait Weather:
   def temp(city: String): Int
 
 object WeatherSimulator:
-  val rnd = new Random()
+  val rnd = Random()
   val l   = -4
   val r   = 2
 

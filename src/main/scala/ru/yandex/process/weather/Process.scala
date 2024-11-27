@@ -8,7 +8,7 @@ import java.time.Instant
 
 def temp(w: Weather, c: Conf): UStream[Int] =
   ZStream
-    .unfold("Moscow")(city => Some((w.temp(city), city)))
+    .unfold("Moscow")(city => Some(w.temp(city), city))
     .schedule(Schedule.spaced(c.interval))
     .take(c.limit)
 
@@ -27,6 +27,5 @@ def avg(n: Int): ZPipeline[Any, Nothing, Int, Int] =
     .collect { case (_, _, Some(sum)) => sum / n }
 
 def program(c: Conf): UStream[Unit] =
-  LogSimulator.make.flatMap { log =>
+  LogSimulator.make.flatMap: log =>
     tempN(c).via(avg(c.window)).zip(ZStream.repeatZIO(instant)).map(log.produce)
-  }

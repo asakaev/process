@@ -8,7 +8,7 @@ import java.time.Duration
 
 val clock: UStream[Unit] = ZStream.tick(1.second)
 
-def temp(w: Weather, interval: Duration): UStream[Int] =
+def tempSpaced(w: Weather, interval: Duration): UStream[Int] =
   ZStream
-    .unfold("Moscow")(city => Some((w.temp(city), city)))
+    .unfold("Moscow")(city => Some(w.temp(city), city))
     .schedule(Schedule.spaced(interval))

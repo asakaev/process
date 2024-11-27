@@ -49,11 +49,9 @@ opaque type Transducer[A, B] =
 // map, filter, scan...
 
 def temp(w: Weather): LazyList[Int] =
-  LazyList.unfold("Moscow") { city =>
-    Some((w.temp(city), city))
-  }
+  LazyList.unfold("Moscow"): city =>
+    Some(w.temp(city), city)
 
 val coin: LazyList[Boolean] =
-  LazyList.unfold(new Random()) { rnd =>
-    Some((rnd.nextBoolean, rnd))
-  }
+  LazyList.unfold(Random()): rnd =>
+    Some(rnd.nextBoolean, rnd)
