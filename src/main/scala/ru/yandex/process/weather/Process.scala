@@ -21,7 +21,7 @@ def tempN(c: Conf): UStream[Int] =
 
 def avg(n: Int): ZPipeline[Any, Nothing, Int, Int] =
   ZPipeline
-    .scan[Int, (Int, Int, Option[Int])]((1, 0, None)) { case ((w, sum, _), x) =>
+    .scan[Int, (Int, Int, Option[Int])](1, 0, None) { case ((w, sum, _), x) =>
       if w == n then (1, 0, Some(sum + x)) else (w + 1, sum + x, None)
     }
     .collect { case (_, _, Some(sum)) => sum / n }
