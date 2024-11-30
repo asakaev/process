@@ -41,8 +41,8 @@ Leaving the Log scope
 ```
 
 ### Почитать
-* [Folds and unfolds all around us](http://conal.net/talks/folds-and-unfolds.pdf). Conal Elliott
-* [Origami programming](https://www.cs.ox.ac.uk/jeremy.gibbons/publications/origami.pdf). Jeremy Gibbons.
+* [Folds and unfolds all around us](http://conal.net/talks/folds-and-unfolds.pdf). Conal Elliott.
+* [Origami programming](https://disk.yandex.ru/i/pX9tnPkAkPmXjA). Jeremy Gibbons.
 * [All Things Flow: Unfolding the History of Streams (extended abstract)](https://okmij.org/ftp/Computation/streams-hapoc2021.pdf). Aggelos Biboudis‚ Jeremy Gibbons and Oleg Kiselyov.
 * [All Things Flow: Unfolding the History of Streams (slides)](http://biboudis.github.io/papers/streams-hapoc2021-slides.pdf). Aggelos Biboudis‚ Jeremy Gibbons and Oleg Kiselyov.
 * [Machines](https://disk.yandex.ru/i/xEKEJZ5xJAsx2w). Rúnar Óli Bjarnason.
