@@ -15,7 +15,7 @@ def produce(
     .map(log.produce)
 
 def avg(xs: LazyList[Int]): Int =
-  xs.foldLeft((0, 0)) { case ((sum, n), x) =>
+  xs.foldLeft(0, 0) { case ((sum, n), x) =>
     (sum + x, n + 1)
   } match
     case (sum, n) =>
@@ -34,7 +34,7 @@ def windows(xs: LazyList[Int], n: Int): LazyList[LazyList[Int]] =
 
 def avgN(xs: LazyList[Int], n: Int): LazyList[Int] =
   xs
-    .scanLeft((1, 0, Option.empty[Int])) { case ((w, sum, _), x) =>
+    .scanLeft(1, 0, Option.empty[Int]) { case ((w, sum, _), x) =>
       if w == n then (1, 0, Some(sum + x))
       else (w + 1, sum + x, None)
     }
